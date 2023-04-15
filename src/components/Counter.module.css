@@ -25,6 +25,20 @@
     color: white;
 }
 
+.error{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border: 2px solid #032d62;
+    width: 170px;
+    height: 80px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #032d62;
+    font-size: 25px;
+    color: #f80606;
+}
+
 
 .errorInput {
     display: flex;

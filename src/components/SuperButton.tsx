@@ -2,6 +2,7 @@ import React from 'react';
 import s from './SuperButton.module.css';
 
 type SuperButtonPropstype = {
+    disabled:boolean
     callback: () => void
     title:string
 }
@@ -11,7 +12,7 @@ export const SuperButton = (props: SuperButtonPropstype) => {
     }
     return (
         <div className={s.superButton}>
-            <button onClick={onClickHandler}>{props.title}</button>
+            <button disabled={props.disabled} onClick={onClickHandler}>{props.title}</button>
         </div>
     );
 };
