@@ -1,0 +1,66 @@
+.counter {
+    margin-top: 100px;
+    margin-left: 20px;
+    border: 2px solid #032d62;
+    width: 200px;
+    height: 200px;
+    display: grid;
+    grid-template-rows: 6fr 3fr;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #8f929a;
+}
+
+.tablo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border: 2px solid #032d62;
+    width: 170px;
+    height: 80px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #032d62;
+    font-size: 25px;
+    color: white;
+}
+
+
+.errorInput {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #032d62;
+
+    width: 170px;
+    height: 80px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #032d62;
+    font-size: 25px;
+    color: red;
+    align-items:center;
+}
+
+.settingTablo{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border: 2px solid #032d62;
+    width: 170px;
+    height: 80px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #032d62;
+    font-size: 13px;
+    color: white;
+}
+
+.button {
+    display: flex;
+    border: 2px solid #032d62;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #032d62;
+    align-items: center;
+}
