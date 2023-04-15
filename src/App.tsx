@@ -4,34 +4,55 @@ import {Customizer} from "./components/Customizer";
 import {Counter} from "./components/Counter";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./components/store/store";
-import {currentValueAC} from "./components/reducers/currentValue-reducer";
-import {incrementValueAC, startValueAC} from "./components/reducers/startValue-reducer";
+import {maxValueAC} from "./components/reducers/maxValue-reducer";
+import {displayValueAC, incrementValueAC, resValueAC} from "./components/reducers/displayValue-reducer";
+import {startValueAC} from "./components/reducers/startInputValue-reducer";
 
 
 function App() {
 
-    const startValue = useSelector<AppRootStateType, number>(state => state.startValue.startValue)
-    const currentValue = useSelector<AppRootStateType, number>(state => state.currentValue.currentValue)
+    const maxInputValue = useSelector<AppRootStateType, number>(state => state.maxInputValue.maxInputValue)
+    const displayValue = useSelector<AppRootStateType, number>(state => state.displayValue.displayValue)
+    const startInputValue = useSelector<AppRootStateType, number>(state => state.startInputValue.startInputValue)
     const dispatch = useDispatch()
-    const setChangeValueButton = (newStartValue: number) => {
-        dispatch(currentValueAC(newStartValue))
+
+    console.log('Максимальное значение: ' + maxInputValue)
+    console.log('Дисплейное значение: ' + displayValue)
+    console.log('Стартовое значение: ' + startInputValue)
+
+    const setChangeStartValueButton = (newStartValue: number) => {
+        console.log('bla bla')
+        dispatch(startValueAC(newStartValue))
+    }
+
+    const setChangeMaxValueButton = (newMaxValue: number) => {
+        dispatch(maxValueAC(newMaxValue))
+
     }
 
     const setClickButton = () => {
-        dispatch(startValueAC(currentValue))
+        dispatch(displayValueAC(startInputValue))
+
     }
 
     const incrClickButton = () => {
-         dispatch(incrementValueAC())
+        dispatch(incrementValueAC())
     }
+
+    const resClickButton = () => {
+        dispatch(resValueAC(startInputValue))
+    }
+
 
     return (
         <div className="App">
-            <Customizer callback={setChangeValueButton}
+            <Customizer callbackStart={setChangeStartValueButton}
+                        callbackMax={setChangeMaxValueButton}
                         callbackClick={setClickButton}
             />
-            <Counter startValue={startValue}
+            <Counter displayValue={displayValue}
                      incrCallback={incrClickButton}
+                     resClickButton={resClickButton}
             />
         </div>
     );

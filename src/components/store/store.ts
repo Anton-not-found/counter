@@ -1,15 +1,15 @@
 import {combineReducers, createStore} from 'redux'
-import {startValueReducer} from "../reducers/startValue-reducer";
+import {displayValueReducer} from "../reducers/displayValue-reducer";
 import {maxValueReducer} from "../reducers/maxValue-reducer";
-import {currentValueReducer} from "../reducers/currentValue-reducer";
+import {startInputValueReducer} from "../reducers/startInputValue-reducer";
 
 
 // объединяя reducer-ы с помощью combineReducers,
 // мы задаём структуру нашего единственного объекта-состояния
 const rootReducer = combineReducers({
-    startValue: startValueReducer,
-    maxValue: maxValueReducer,
-    currentValue: currentValueReducer
+    displayValue: displayValueReducer,
+    maxInputValue: maxValueReducer,
+    startInputValue: startInputValueReducer
 })
 // непосредственно создаём store
 export const store = createStore(rootReducer)

@@ -2,16 +2,16 @@
 
 
 export type MaxValueType = {
-    maxValue: number
+    maxInputValue: number
 }
-const initialState:MaxValueType = {maxValue: 1}
+const initialState:MaxValueType = {maxInputValue: 1}
 
 export const maxValueReducer = (state: MaxValueType = initialState, action: TsarType):MaxValueType => {
 
     switch (action.type) {
         case 'MAX VALUE':
 
-            return {...state, maxValue: action.payload.newMaxValue}
+            return {...state, maxInputValue: action.payload.newMaxInputValue}
         default:
             return state
     }
@@ -20,11 +20,11 @@ export const maxValueReducer = (state: MaxValueType = initialState, action: Tsar
 type TsarType = MaxValueACType
 
 type MaxValueACType = ReturnType<typeof maxValueAC>
-export const maxValueAC = (newMaxValue:number) => {
+export const maxValueAC = (newMaxInputValue:number) => {
     return{
         type: 'MAX VALUE',
         payload: {
-            newMaxValue
+            newMaxInputValue
         }
     }as const
 }

@@ -6,7 +6,8 @@ import {MaxInput} from "./MaxInput";
 
 
 type CustomizerPropsType = {
-    callback:(newStartValue:number)=>void
+    callbackStart:(newStartValue:number)=>void
+    callbackMax:(newMaxValue:number)=>void
     callbackClick:()=>void
 }
 export const Customizer = (props: CustomizerPropsType) => {
@@ -16,10 +17,10 @@ export const Customizer = (props: CustomizerPropsType) => {
         <div className={s.customizer}>
             <div className={s.customizerInput}>
                 <div className={s.inputItem}>
-                    <MaxInput />
+                    <MaxInput callback={props.callbackMax}/>
                 </div>
                 <div className={s.inputItem}>
-                    <StartInput callback={props.callback}/>
+                    <StartInput callback={props.callbackStart}/>
 
                 </div>
             </div>

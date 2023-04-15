@@ -1,17 +1,20 @@
 import React, {ChangeEvent, useState} from 'react';
 import s from './SuperInput.module.css';
 
+type MaxInputPropstype = {
+    callback: (newMaxValue:number)=>void
+}
 
+export const MaxInput = (props:MaxInputPropstype) => {
 
-export const MaxInput = () => {
-
-    const [maxInputValue, setMaxInputValue] = useState<number>(0)
+    const [maxInputValue, setMaxInputValue] = useState<number>(1)
 
 
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        let newValue = Number(e.currentTarget.value)
-        setMaxInputValue(newValue)
+        let newMaxValue = Number(e.currentTarget.value)
+        setMaxInputValue(newMaxValue)
+        props.callback(newMaxValue)
     }
     const onfocusHandler = () => {
     }
