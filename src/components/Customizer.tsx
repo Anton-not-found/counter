@@ -32,6 +32,7 @@ export const Customizer = (props: CustomizerPropsType) => {
 
                 </div>
             </div>
+
             <div className={s.customizerButton}>
                 <SuperButton disabled={!props.focusValue || !props.errorValue} title={'S E T'}
                              callback={props.callbackClick}/>

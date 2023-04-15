@@ -1,4 +1,4 @@
-.customizer{
+.customizer {
     margin-top: 100px;
     margin-left: 20px;
     border: 2px solid #032d62;
@@ -11,7 +11,7 @@
     background-color: #8f929a;
 }
 
-.customizerInput{
+.customizerInput {
     /*border: 1px solid #0048ff;*/
     /*display: flex;*/
     /*justify-content: center;*/
@@ -25,21 +25,21 @@
 }
 
 
-.inputItem{
+.inputItem {
     display: flex;
     justify-content: center;
     /*align-items: center;*/
     padding-top: 8px;
 }
 
-.customizerInput input{
+.customizerInput input {
     border: 2px solid #faef24;
     border-radius: 3px;
     width: 50px;
     height: 20px;
 }
 
-.customizerErrorInput{
+.customizerErrorInput {
     border: 2px solid #032d62;
     width: 170px;
     height: 80px;
@@ -48,7 +48,7 @@
     box-shadow: 5px 5px 8px #032d62;
 }
 
-.customizerErrorInput input{
+.customizerErrorInput input {
     border: 2px solid #d20202;
     border-radius: 3px;
     background-color: rgb(246, 126, 126);
@@ -56,7 +56,7 @@
     height: 20px;
 }
 
-.customizerButton{
+.customizerButton {
     display: flex;
     border: 2px solid #032d62;
     justify-content: space-around;
