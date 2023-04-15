@@ -11,7 +11,7 @@
     background-color: #8f929a;
 }
 
-.tablo {
+.display {
     display: flex;
     justify-content: center;
     align-items:center;
@@ -21,7 +21,7 @@
     margin-top: 15px;
     border-radius: 10px;
     box-shadow: 5px 5px 8px #032d62;
-    font-size: 25px;
+    font-size: 40px;
     color: white;
 }
 
@@ -35,27 +35,25 @@
     margin-top: 15px;
     border-radius: 10px;
     box-shadow: 5px 5px 8px #032d62;
-    font-size: 25px;
+    font-size: 23px;
     color: #f80606;
 }
 
-
-.errorInput {
+.incrValueMax{
     display: flex;
     justify-content: center;
+    align-items:center;
     border: 2px solid #032d62;
-
     width: 170px;
     height: 80px;
     margin-top: 15px;
     border-radius: 10px;
     box-shadow: 5px 5px 8px #032d62;
-    font-size: 25px;
-    color: red;
-    align-items:center;
+    font-size: 40px;
+    color: #f80202;
 }
 
-.settingTablo{
+.settingDisplay{
     display: flex;
     justify-content: center;
     align-items:center;
@@ -65,10 +63,11 @@
     margin-top: 15px;
     border-radius: 10px;
     box-shadow: 5px 5px 8px #032d62;
-    font-size: 13px;
+    font-size: 20px;
+    text-align: center;
     color: white;
-}
 
+}
 .button {
     display: flex;
     border: 2px solid #032d62;
@@ -78,3 +77,33 @@
     box-shadow: 5px 5px 8px #032d62;
     align-items: center;
 }
+
+/*.errorInput {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    border: 2px solid #032d62;*/
+
+/*    width: 170px;*/
+/*    height: 80px;*/
+/*    margin-top: 15px;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 5px 5px 8px #032d62;*/
+/*    font-size: 25px;*/
+/*    color: red;*/
+/*    align-items:center;*/
+/*}*/
+
+/*.settingTablo{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items:center;*/
+/*    border: 2px solid #032d62;*/
+/*    width: 170px;*/
+/*    height: 80px;*/
+/*    margin-top: 15px;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 5px 5px 8px #032d62;*/
+/*    font-size: 13px;*/
+/*    color: white;*/
+/*}*/
+

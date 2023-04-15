@@ -4,7 +4,6 @@ import {SuperButton} from "./SuperButton";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "./store/store";
 
-
 type CounterPropsType = {
     displayValue: number
     incrCallback: () => void
@@ -21,14 +20,14 @@ export const Counter = (props: CounterPropsType) => {
     const disableConditionResValue = counterDisplayValue === startInputValue
     const disabledButtonsDuringSetting = props.focusValue
 
-    const normalTablo = props.focusValue ? "enter values and press 'set'" : props.displayValue
-    const errorTablo = !props.errorValue
-    console.log(errorTablo)
+    const normalDisplay = props.focusValue ? "enter values and press 'set'" : props.displayValue
+    const errorDisplay = !props.errorValue
+    const conditionsClass = errorDisplay ? s.error : disableConditionIncrValue ? s.incrValueMax : props.focusValue ? s.settingDisplay : s.display
 
     return (
         <div className={s.counter}>
-            <div className={disableConditionIncrValue || errorTablo ? s.error : s.tablo}>
-                {errorTablo ? 'Incorrect value!' : normalTablo}
+            <div className={conditionsClass}>
+                {errorDisplay ? 'Incorrect value!' : normalDisplay}
             </div>
 
             <div className={s.button}>

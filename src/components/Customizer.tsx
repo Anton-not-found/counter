@@ -21,13 +21,13 @@ export const Customizer = (props: CustomizerPropsType) => {
                 <div className={s.inputItem}>
                     <SuperInput customizerSettings={props.customizerSettings}
                                 callback={props.callbackMax}
-                                title={'max value'}
+                                title={'max value: '}
                     />
                 </div>
                 <div className={s.inputItem}>
                     <SuperInput customizerSettings={props.customizerSettings}
                                 callback={props.callbackStart}
-                                title={'start value'}
+                                title={'start value: '}
                     />
 
                 </div>
