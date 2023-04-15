@@ -1,22 +1,29 @@
 import React, {ChangeEvent, FocusEvent, useState} from 'react';
 import s from './SuperInput.module.css';
+import {useSelector} from "react-redux";
+import {AppRootStateType} from "./store/store";
 
-type MaxInputPropstype = {
-    callback: (newMaxValue: number) => void
+type InputValuePropsType = {
+    callback: (inputValue: number) => void
     customizerSettings: (focus: boolean) => void
-    title:string
+    title: string
 }
 
-export const SuperInput = (props: MaxInputPropstype) => {
+export const SuperInput = (props: InputValuePropsType) => {
 
+   // const startInputValue = useSelector<AppRootStateType, number>(state => state.startInputValue.startInputValue)
+   // const maxInputValue = useSelector<AppRootStateType, number>(state => state.maxInputValue.maxInputValue)
 
-    const [maxInputValue, setMaxInputValue] = useState<number>(1)
-
+    const [inputValue, setinputValue] = useState<number>(1)
+    //const errorInput = maxInputValue > startInputValue
+    // console.log('Старт Инпут: ' + startInputValue)
+    // console.log('Макс Инпут: ' + maxInputValue)
+   // console.log(errorInput)
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        let newMaxValue = Number(e.currentTarget.value)
-        setMaxInputValue(newMaxValue)
-        props.callback(newMaxValue)
+        let inputValue = Number(e.currentTarget.value)
+        setinputValue(inputValue)
+        props.callback(inputValue)
     }
     const onfocusHandler = (e: FocusEvent<HTMLInputElement>) => {
         let focus = e ? true : false
@@ -27,7 +34,7 @@ export const SuperInput = (props: MaxInputPropstype) => {
         <div className={s.superInput}>
             <span>{props.title}
                 <input type='number'
-                       value={maxInputValue}
+                       value={inputValue}
                        onChange={onChangeHandler}
                        onFocus={onfocusHandler}
 

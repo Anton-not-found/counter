@@ -20,9 +20,6 @@ export const Counter = (props: CounterPropsType) => {
     const disableConditionResValue = counterDisplayValue === startInputValue
     const disabledButtonsDuringSetting = props.focusValue
 
-
-    console.log('counterDisplay: ' + counterDisplayValue)
-    console.log('maxSetValue: ' + maxSetValue)
     return (
         <div className={s.counter}>
             <div className={disableConditionIncrValue ? s.error : s.tablo}>

@@ -15,9 +15,9 @@ function App() {
     const dispatch = useDispatch()
 
     const [focusValue, setFocusValue] = useState<boolean>(false)
-    //  console.log('Максимальное значение: ' + maxInputValue)
+     // console.log('Максимальное значение: ' + maxInputValue)
     //  console.log('Дисплейное значение: ' + displayValue)
-    //   console.log('Стартовое значение: ' + startInputValue)
+    //  console.log('Стартовое значение: ' + startInputValue)
 
     const setChangeStartValueButton = (newStartValue: number) => {
         dispatch(startValueAC(newStartValue))
@@ -49,6 +49,7 @@ function App() {
                         callbackMax={setChangeMaxValueButton}
                         callbackClick={setClickButton}
                         customizerSettings={customizerSettings}
+                        focusValue={focusValue}
             />
             <Counter displayValue={displayValue}
                      incrCallback={incrClickButton}
