@@ -1,7 +1,5 @@
 import React, {ChangeEvent, FocusEvent, useState} from 'react';
 import s from './SuperInput.module.css';
-import {useSelector} from "react-redux";
-import {AppRootStateType} from "./store/store";
 
 type InputValuePropsType = {
     callback: (inputValue: number) => void

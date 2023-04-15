@@ -12,9 +12,11 @@ function App() {
 
     const displayValue = useSelector<AppRootStateType, number>(state => state.displayValue.displayValue)
     const startInputValue = useSelector<AppRootStateType, number>(state => state.startInputValue.startInputValue)
+    const maxInputValue = useSelector<AppRootStateType, number>(state => state.maxInputValue.maxInputValue)
     const dispatch = useDispatch()
 
     const [focusValue, setFocusValue] = useState<boolean>(false)
+    const errorValue = maxInputValue > startInputValue && maxInputValue >= 0 && startInputValue >= 0
      // console.log('Максимальное значение: ' + maxInputValue)
     //  console.log('Дисплейное значение: ' + displayValue)
     //  console.log('Стартовое значение: ' + startInputValue)
@@ -39,7 +41,7 @@ function App() {
         dispatch(resValueAC(startInputValue))
     }
 
-    const customizerSettings = (focus: boolean) => {
+    const customizerSettings = () => {
         setFocusValue(true)
     }
 
@@ -50,11 +52,13 @@ function App() {
                         callbackClick={setClickButton}
                         customizerSettings={customizerSettings}
                         focusValue={focusValue}
+                        errorValue={errorValue}
             />
             <Counter displayValue={displayValue}
                      incrCallback={incrClickButton}
                      resClickButton={resClickButton}
                      focusValue={focusValue}
+                     errorValue={errorValue}
 
             />
         </div>

@@ -10,6 +10,7 @@ type CounterPropsType = {
     incrCallback: () => void
     resClickButton: () => void
     focusValue: boolean
+    errorValue: boolean
 }
 export const Counter = (props: CounterPropsType) => {
     const startInputValue = useSelector<AppRootStateType, number>(state => state.startInputValue.startInputValue)
@@ -20,10 +21,14 @@ export const Counter = (props: CounterPropsType) => {
     const disableConditionResValue = counterDisplayValue === startInputValue
     const disabledButtonsDuringSetting = props.focusValue
 
+    const normalTablo = props.focusValue ? "enter values and press 'set'" : props.displayValue
+    const errorTablo = !props.errorValue
+    console.log(errorTablo)
+
     return (
         <div className={s.counter}>
-            <div className={disableConditionIncrValue ? s.error : s.tablo}>
-                {props.focusValue ? 'settings please wait' : props.displayValue}
+            <div className={disableConditionIncrValue || errorTablo ? s.error : s.tablo}>
+                {errorTablo ? 'Incorrect value!' : normalTablo}
             </div>
 
             <div className={s.button}>
